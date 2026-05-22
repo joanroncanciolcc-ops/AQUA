@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>AQUA - Inicio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="principal-body">
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <!-- IZQUIERDA: LOGO -->
+    <div class="left">
+      <div class="logo">
+        <img src="img/logo-aqua.png" alt="Logo AQUA" class="logo-img">
+        <span class="logo-text">AQUA</span>
+      </div>
+    </div>
+
+    <!-- CENTRO-IZQUIERDA: BUSCADOR -->
+    <div class="search-area">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Buscar servicios o productos..."
+      >
+    </div>
+
+    <!-- DERECHA -->
+    <div class="right">
+
+      <!-- 🔵 CUADRO AZUL: SOLO NAVEGACIÓN -->
+      <nav class="text-nav boxed-nav">
+  <span class="nav-item" onclick="mostrarInicio()">Inicio ▼</span>
+  <span class="nav-item" onclick="mostrarServicios()">Servicios ▼</span>
+  <span class="nav-item" onclick="menuCitas()">Citas ▼</span>
+  <span class="nav-item" onclick="mostrarProductos()">Productos ▼</span>
+  <span class="nav-item" onclick="verMisPedidos()">Mis pedidos ▼</span>
+      </nav>
+
+      <!-- PERFIL (FUERA DEL CUADRO) -->
+      <div class="profile">
+        <span class="perfil-texto" onclick="toggleProfileMenu()">Perfil ▼</span>
+
+        <label for="foto-input">
+          <img
+            id="profile-img"
+            src="img/default-user.png"
+            class="profile-img"
+            alt="Foto de perfil">
+        </label>
+
+        <input type="file" id="foto-input" hidden onchange="cambiarFoto(event)">
+
+        <div id="profile-menu" class="profile-menu">
+          <button onclick="verCitas()">📅 Ver citas</button>
+          <button onclick="verCarrito()">🛒 Ver carrito</button>
+          <button class="logout" onclick="logout()">⛔ Cerrar sesión</button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido" class="main"></main>
+
+  <!-- SCRIPTS -->
+  <script src="js/principal.js"></script>
+  <script src="js/citas.js"></script>
+  <script src="js/productos.js"></script>
+
+</body>
+</html>
